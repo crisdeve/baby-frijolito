@@ -1,0 +1,49 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Gift catalog stock. Public read so the invite can show availability.
+    // Writes are restricted to a strictly-decreasing, non-negative integer
+    // so a compromised client can't restock, delete, or overwrite anything
+    // besides `stock`.
+    match /gifts/{giftId} {
+      allow read: if true;
+      allow create, delete: if false;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stock'])
+        && request.resource.data.stock is int
+        && request.resource.data.stock < resource.data.stock
+        && request.resource.data.stock >= 0;
+    }
+
+    // One attendance confirmation per guest (doc id == guestId). `get`
+    // (read a single known id) stays open because confirmAttendance()
+    // checks for an existing confirmation before creating one, inside the
+    // same transaction that claims gifts and decrements their stock. `list`
+    // stays closed so the full collection can't be enumerated/read in bulk.
+    // Never updatable or deletable from the client — only written once.
+    match /confirmaciones/{guestId} {
+      allow get: if true;
+      allow list, update, delete: if false;
+      allow create: if request.resource.data.guestId == guestId
+        && request.resource.data.name is string
+        && request.resource.data.numGuests is int
+        && request.resource.data.numGuests > 0
+        && request.resource.data.confirmedAt is string;
+    }
+
+    // One doc per (guest, gift) claim, doc id == `${guestId}_${giftId}` so
+    // it can't be spoofed to a different id than its own data. The client
+    // never needs to read these back, so read access stays fully closed.
+    match /regalos-confirmados/{claimId} {
+      allow read, update, delete: if false;
+      allow create: if claimId == request.resource.data.guestId + '_' + request.resource.data.giftId
+        && request.resource.data.guestId is string
+        && request.resource.data.name is string
+        && request.resource.data.giftId is string
+        && request.resource.data.giftName is string
+        && request.resource.data.quantity is int
+        && request.resource.data.quantity > 0
+        && request.resource.data.confirmedAt is string;
+    }
+  }
+}

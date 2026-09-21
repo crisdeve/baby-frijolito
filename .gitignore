@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+service-account*.json
 
 # debug
 npm-debug.log*
@@ -32,6 +33,12 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+# Firebase web config + reCAPTCHA site key are public by design (safety
+# comes from Firestore rules + App Check, not secrecy) — committed so both
+# `next dev` and the GitHub Pages build read them with no extra setup.
+# (.env.local / .env.*.local stay ignored, for personal per-machine overrides.)
+!.env
 
 # vercel
 .vercel

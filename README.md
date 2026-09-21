@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Baby Shower de Frijolito
 
-## Getting Started
+Invitación estática (Next.js `output: 'export'`) para GitHub Pages, con lista de
+regalos cuya disponibilidad vive en Firestore.
 
-First, run the development server:
+- Invitados y catálogo de regalos: `data/guests.json` y `data/gifts.json`.
+- Cada invitado tiene un link personal: `/i/<id-del-invitado>`.
+- La disponibilidad de cada regalo se lee de Firestore (colección `gifts`,
+  un solo `getDocs`) y se combina con la info del JSON (nombre/imagen/descr.).
+- Al confirmar, una transacción de Firestore descuenta 1 unidad de stock y
+  guarda la confirmación en la colección `confirmaciones`.
+- Protección contra bots: [Firebase App Check](https://firebase.google.com/docs/app-check)
+  con reCAPTCHA v3, exigido por las reglas de seguridad de Firestore — no hace
+  falta backend propio.
+
+## Configurar Firebase
+
+1. Crea un proyecto en [Firebase Console](https://console.firebase.google.com/)
+   y dentro de él una base de datos **Firestore** (modo producción).
+2. Registra una app web y copia sus credenciales al archivo **`.env`**
+   (ya está en el repo con placeholders `REPLACE_ME` — reemplázalos). Estos
+   valores son públicos por diseño (la seguridad la dan las Firestore Rules y
+   App Check, no ocultar el `apiKey`), por eso el archivo sí se commitea; así
+   tanto `next dev` como el deploy a GitHub Pages funcionan con solo
+   `git push`, sin configurar secrets.
+3. En **App Check**, registra la app con el proveedor **reCAPTCHA v3**, copia
+   el *site key* a `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` en `.env`, y activa
+   **Enforce** para Cloud Firestore (App Check > APIs).
+4. Instala el [Firebase CLI](https://firebase.google.com/docs/cli) y despliega
+   las reglas de seguridad (`firestore.rules`):
+
+   ```bash
+   firebase login
+   firebase deploy --only firestore:rules --project <tu-project-id>
+   ```
+
+5. Inicializa el stock de regalos con el script de seed (usa el Admin SDK, así
+   que no pasa por las reglas). Descarga una *service account key* JSON desde
+   Project settings > Service accounts, y edita `STOCK_BY_ID` en
+   `scripts/seed-gifts.mjs` con las cantidades reales:
+
+   ```bash
+   GOOGLE_APPLICATION_CREDENTIALS=./service-account.json pnpm seed:gifts
+   ```
+
+## Desarrollo local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). No hace falta crear un
+`.env.local`: el `.env` del repo ya se carga tanto en `next dev` como en
+`next build` (a diferencia de `.env.production`, que Next.js solo lee al
+hacer build). Solo crea `.env.local` si algún día quieres apuntar el
+desarrollo local a un proyecto de Firebase distinto al de producción — ver
+`.env.example`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+En desarrollo, App Check usa un *debug token*: la consola del navegador
+mostrará el token la primera vez — regístralo en Firebase Console >
+App Check > Apps > ⋮ > Manage debug tokens para que las escrituras a
+Firestore funcionen en `next dev`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para probar un invitado, visita `/i/ana-lopez` (o cualquier id de
+`data/guests.json`).
 
-## Learn More
+## Despliegue en GitHub Pages
 
-To learn more about Next.js, take a look at the following resources:
+El workflow en `.github/workflows/deploy.yml` construye el sitio (`next build`
+con `output: 'export'`, leyendo `.env`) y lo publica en GitHub Pages en cada
+push a `main`. No necesitas configurar secrets: solo llena `.env` con tus
+valores reales de Firebase y haz commit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. En el repo, ve a **Settings > Pages** y pon **Source: GitHub Actions**.
+2. Si el sitio se sirve como `https://<usuario>.github.io/<repo>` (project
+   site), el workflow ya calcula el `basePath` a partir del nombre del repo.
+   Si usas un dominio propio o un *user/org site*
+   (`https://<usuario>.github.io`), quita esa línea `NEXT_PUBLIC_BASE_PATH`
+   del workflow.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para generar el export localmente:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm build
+# sitio estático listo en ./out
+```

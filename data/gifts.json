@@ -1,0 +1,212 @@
+[
+  {
+    "id": "colecho-colchon",
+    "name": "Colecho/Colchón (mosquitero)",
+    "description": "Colchón para colecho con mosquitero incluido, para que duerma seguro junto a ustedes.",
+    "image": "/gifts/cuna.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "banera-cambiador",
+    "name": "Bañera/Cambiador",
+    "description": "Bañera con cambiador integrado para el baño y el cambio de pañal diario.",
+    "image": "/gifts/banera.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "mecedora-bebe",
+    "name": "Mecedora bebé",
+    "description": "Mecedora para acunar y calmar a Frijolito.",
+    "image": "/gifts/mecedora.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "protector-colecho",
+    "name": "Protector de colecho",
+    "description": "Protector impermeable para mantener limpio y seco el colecho.",
+    "image": "/gifts/cuna.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "sabana-colecho",
+    "name": "Sábana para el colecho (x5)",
+    "description": "Set de 5 sábanas suaves para el colchón del colecho.",
+    "image": "/gifts/cuna.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "sleeping",
+    "name": "Sleeping",
+    "description": "Saco de dormir para que descanse abrigado y seguro.",
+    "image": "/gifts/sleeping.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "gimnasio-piso",
+    "name": "Gimnasio para piso",
+    "description": "Gimnasio de piso con juguetes colgantes para estimular a Frijolito.",
+    "image": "/gifts/gimnasio.svg",
+    "category": "Muebles y descanso"
+  },
+  {
+    "id": "fular",
+    "name": "Fular",
+    "description": "Fular portabebés para cargarlo cómodamente pegado a ustedes.",
+    "image": "/gifts/fular.svg",
+    "category": "Para salir"
+  },
+  {
+    "id": "coche",
+    "name": "Coche",
+    "description": "Coche de paseo para las salidas con Frijolito.",
+    "image": "/gifts/coche.svg",
+    "category": "Para salir"
+  },
+  {
+    "id": "cojin-amamantar",
+    "name": "Cojín Amamantar",
+    "description": "Cojín ergonómico para apoyar la lactancia con comodidad.",
+    "image": "/gifts/cojin-amamantar.svg",
+    "category": "Lactancia"
+  },
+  {
+    "id": "toalla-capucha",
+    "name": "Toalla con Capucha (x5)",
+    "description": "Set de 5 toallas con capucha, suaves para después del baño.",
+    "image": "/gifts/toalla.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panales-recien-nacido",
+    "name": "Pañales recién nacido x1",
+    "description": "Pañales para las primeras semanas de Frijolito.",
+    "image": "/gifts/panales.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panales-etapa-1",
+    "name": "Pañales etapa 1",
+    "description": "Pañales talla 1 para los primeros meses.",
+    "image": "/gifts/panales.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panales-etapa-2",
+    "name": "Pañales etapa 2 - Winny",
+    "description": "Pañales talla 2, marca Winny.",
+    "image": "/gifts/panales.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panales-etapa-3",
+    "name": "Pañales etapa 3 - Winny",
+    "description": "Pañales talla 3, marca Winny.",
+    "image": "/gifts/panales.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panales-etapa-4",
+    "name": "Pañales etapa 4 - Winny",
+    "description": "Pañales talla 4, marca Winny.",
+    "image": "/gifts/panales.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "panitos-humedos",
+    "name": "Pañitos Húmedos",
+    "description": "Toallitas húmedas para la limpieza diaria.",
+    "image": "/gifts/panitos.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "crema-panalera",
+    "name": "Crema Pañalera Almipro",
+    "description": "Crema para prevenir y tratar la irritación por el pañal.",
+    "image": "/gifts/crema.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "crema-hidratante",
+    "name": "Crema Hidratante Acid Mantle Baby",
+    "description": "Crema hidratante suave para la piel sensible de Frijolito.",
+    "image": "/gifts/crema.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "kit-unas",
+    "name": "Kit de uñas",
+    "description": "Set de tijeras y limas especiales para el cuidado de sus uñitas.",
+    "image": "/gifts/unas-kit.svg",
+    "category": "Higiene y básicos"
+  },
+  {
+    "id": "muselinas",
+    "name": "Muselinas 100% Algodón",
+    "description": "Muselinas suaves de algodón, ideales para cargar, cubrir o limpiar.",
+    "image": "/gifts/ropita.svg",
+    "category": "Ropita"
+  },
+  {
+    "id": "bodies-manga-larga",
+    "name": "Bodies Manga Larga 0-3 meses 100% Algodón",
+    "description": "Bodies de manga larga en algodón 100%, para los primeros meses.",
+    "image": "/gifts/ropita.svg",
+    "category": "Ropita"
+  },
+  {
+    "id": "gorros-algodon",
+    "name": "Gorros 100% Algodón",
+    "description": "Gorritos de algodón para mantener su cabecita abrigada.",
+    "image": "/gifts/gorro.svg",
+    "category": "Ropita"
+  },
+  {
+    "id": "calcetines-algodon",
+    "name": "Calcetines 100% Algodón",
+    "description": "Calcetines suaves de algodón para sus piecitos.",
+    "image": "/gifts/calcetin.svg",
+    "category": "Ropita"
+  },
+  {
+    "id": "ropa-3-6-meses",
+    "name": "Ropa 3-6 meses Unisex - 100% Algodón",
+    "description": "Conjunto de ropita unisex de algodón para 3 a 6 meses.",
+    "image": "/gifts/ropita.svg",
+    "category": "Ropita"
+  },
+  {
+    "id": "termometro",
+    "name": "Termómetro",
+    "description": "Termómetro digital para revisar su temperatura con facilidad.",
+    "image": "/gifts/termometro.svg",
+    "category": "Salud y cuidado"
+  },
+  {
+    "id": "aspirador-nasal",
+    "name": "Aspirador Nasal Eléctrico",
+    "description": "Aspirador nasal eléctrico para despejar su naricita.",
+    "image": "/gifts/aspirador-nasal.svg",
+    "category": "Salud y cuidado"
+  },
+  {
+    "id": "esterilizador",
+    "name": "Esterilizador",
+    "description": "Esterilizador para biberones y accesorios del bebé.",
+    "image": "/gifts/esterilizador.svg",
+    "category": "Salud y cuidado"
+  },
+  {
+    "id": "jabon-esterilizador",
+    "name": "Jabón lavado cosas (esterilizador)",
+    "description": "Jabón especial para lavar biberones y accesorios antes de esterilizar.",
+    "image": "/gifts/esterilizador.svg",
+    "category": "Salud y cuidado"
+  },
+  {
+    "id": "botiquin",
+    "name": "Botiquín (copitos, gasas, algodón)",
+    "description": "Botiquín básico con copitos, gasas y algodón para el cuidado diario.",
+    "image": "/gifts/botiquin.svg",
+    "category": "Salud y cuidado"
+  }
+]

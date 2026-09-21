@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ana-lopez",
+    "name": "Ana López",
+    "maxGuests": 2
+  },
+  {
+    "id": "familia-perez",
+    "name": "Familia Pérez",
+    "maxGuests": 4
+  },
+  {
+    "id": "sofia-ramirez",
+    "name": "Sofía Ramírez",
+    "maxGuests": 1
+  },
+  {
+    "id": "carlos-y-maria",
+    "name": "Carlos y María",
+    "maxGuests": 2
+  }
+]
