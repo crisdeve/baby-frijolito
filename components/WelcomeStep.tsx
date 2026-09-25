@@ -19,9 +19,9 @@ export default function WelcomeStep({
           type="button"
           onClick={() => setOpened(true)}
           aria-label="Abrir la invitación"
-          className="font-script text-4xl text-brand-dark"
+          className="font-script text-4xl text-brand-dark px-8"
         >
-          abrir invitación
+          Abrir invitación
         </button>
         <BabyImage className="w-full" priority />
       </div>
@@ -48,7 +48,7 @@ export default function WelcomeStep({
         <button
           type="button"
           onClick={onAccept}
-          className="w-full rounded-full bg-brand px-6 py-3 font-display text-lg font-semibold text-white shadow-md transition-colors hover:bg-brand-dark"
+          className="rounded-full bg-brand px-6 py-3 font-display text-lg font-semibold text-white shadow-md transition-colors hover:bg-brand-dark"
         >
           Acceder a la invitación
         </button>

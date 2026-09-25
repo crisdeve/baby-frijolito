@@ -18,6 +18,7 @@ export type GiftCatalogItem = {
   description: string;
   image: string;
   category: GiftCategory;
+  url?: string;
 };
 
 export type GiftWithStock = GiftCatalogItem & {

@@ -23,32 +23,66 @@ export default function GiftCard({
           : "border-transparent bg-accent-cream"
       } ${agotado ? "opacity-50 grayscale" : ""}`}
     >
-      <div className="flex flex-col items-center gap-2">
-        <div className="relative h-16 w-16">
-          <Image
-            src={gift.image}
-            alt={gift.name}
-            fill
-            sizes="64px"
-            className="object-contain"
-          />
-        </div>
-        <p className="font-display text-sm font-semibold leading-tight text-foreground">
-          {gift.name}
-        </p>
-        <p className="text-xs leading-snug text-foreground/70">
-          {gift.description}
-        </p>
-        <span
-          className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-            agotado
-              ? "bg-foreground/10 text-foreground/60"
-              : "bg-brand/10 text-brand-dark"
-          }`}
+      {gift.url ? (
+        <a
+          href={gift.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-2"
         >
-          {agotado ? "Agotado" : `Disponibles: ${remaining}`}
-        </span>
-      </div>
+          <div className="relative h-16 w-16">
+            <Image
+              src={gift.image}
+              alt={gift.name}
+              fill
+              sizes="64px"
+              className="object-contain"
+            />
+          </div>
+          <p className="font-display text-sm font-semibold leading-tight text-foreground underline decoration-dotted underline-offset-2">
+            {gift.name}
+          </p>
+          <p className="text-xs leading-snug text-foreground/70">
+            {gift.description}
+          </p>
+          <span
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+              agotado
+                ? "bg-foreground/10 text-foreground/60"
+                : "bg-brand/10 text-brand-dark"
+            }`}
+          >
+            {agotado ? "Agotado" : `Disponibles: ${remaining}`}
+          </span>
+        </a>
+      ) : (
+        <div className="flex flex-col items-center gap-2">
+          <div className="relative h-16 w-16">
+            <Image
+              src={gift.image}
+              alt={gift.name}
+              fill
+              sizes="64px"
+              className="object-contain"
+            />
+          </div>
+          <p className="font-display text-sm font-semibold leading-tight text-foreground">
+            {gift.name}
+          </p>
+          <p className="text-xs leading-snug text-foreground/70">
+            {gift.description}
+          </p>
+          <span
+            className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+              agotado
+                ? "bg-foreground/10 text-foreground/60"
+                : "bg-brand/10 text-brand-dark"
+            }`}
+          >
+            {agotado ? "Agotado" : `Disponibles: ${remaining}`}
+          </span>
+        </div>
+      )}
 
       <div className="mt-1 flex items-center gap-3">
         <button
