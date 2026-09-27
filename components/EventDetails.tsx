@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import { babyShowerEvent } from "@/lib/event";
 
 type Detail = "fecha" | "lugar" | "direccion";
@@ -44,7 +45,7 @@ export default function EventDetails({
             className="flex flex-col items-center gap-0.5 rounded-full px-3 py-1 transition-colors hover:bg-brand-light/20"
           >
             <Image
-              src={button.icon}
+              src={assetPath(button.icon)}
               alt=""
               width={200}
               height={200}
@@ -63,7 +64,7 @@ export default function EventDetails({
             className="flex flex-col items-center gap-0.5 rounded-full px-3 py-1 transition-colors hover:bg-brand-light/20"
           >
             <Image
-              src="/icons/confirmar.svg"
+              src={assetPath("/icons/confirmar.svg")}
               alt=""
               width={200}
               height={200}
@@ -107,13 +108,13 @@ function DetailContent({ detail }: { detail: Detail }) {
   if (detail === "fecha") {
     return (
       <>
-        <Image src="/icons/calendario.svg" alt="" width={200} height={200} className="h-16 w-16" />
+        <Image src={assetPath("/icons/calendario.svg")} alt="" width={200} height={200} className="h-16 w-16" />
         <h2 id="event-detail-title" className="font-script text-3xl text-brand-dark">
           Fecha y hora
         </h2>
         <p className="text-foreground/80">{babyShowerEvent.date}</p>
         <p className="flex items-center gap-2 text-foreground/80">
-          <Image src="/icons/reloj.svg" alt="" width={200} height={200} className="h-6 w-6" />
+          <Image src={assetPath("/icons/reloj.svg")} alt="" width={200} height={200} className="h-6 w-6" />
           {babyShowerEvent.time}
         </p>
       </>
@@ -123,7 +124,7 @@ function DetailContent({ detail }: { detail: Detail }) {
   if (detail === "lugar") {
     return (
       <>
-        <Image src="/icons/ubicacion.svg" alt="" width={200} height={200} className="h-16 w-16" />
+        <Image src={assetPath("/icons/ubicacion.svg")} alt="" width={200} height={200} className="h-16 w-16" />
         <h2 id="event-detail-title" className="font-script text-3xl text-brand-dark">
           Lugar
         </h2>
@@ -134,7 +135,7 @@ function DetailContent({ detail }: { detail: Detail }) {
 
   return (
     <>
-      <Image src="/icons/mapa.svg" alt="" width={200} height={200} className="h-16 w-16" />
+      <Image src={assetPath("/icons/mapa.svg")} alt="" width={200} height={200} className="h-16 w-16" />
       <h2 id="event-detail-title" className="font-script text-3xl text-brand-dark">
         Dirección
       </h2>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import type { GiftSelection, GiftWithStock, Guest } from "@/lib/types";
 import { confirmAttendance, getGiftsWithStock } from "@/lib/gifts-service";
 import WelcomeStep from "@/components/WelcomeStep";
@@ -116,7 +117,7 @@ export default function InvitationFlow({ guest }: { guest: Guest }) {
         className="fixed left-4 top-4 z-50 h-11 w-11 rounded-full shadow-md transition-transform hover:scale-105"
       >
         <Image
-          src="/icons/bebe.svg"
+          src={assetPath("/icons/bebe.svg")}
           alt=""
           width={100}
           height={100}

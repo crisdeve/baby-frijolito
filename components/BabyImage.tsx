@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 
 export default function BabyImage({
   className = "w-32",
@@ -9,7 +10,7 @@ export default function BabyImage({
 }) {
   return (
     <Image
-      src="/baby-welcome.png"
+      src={assetPath("/baby-welcome.png")}
       alt="Frijolito dándote la bienvenida"
       width={1296}
       height={832}

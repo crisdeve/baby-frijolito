@@ -222,12 +222,5 @@
     "image": "/gifts/libro.svg",
     "category": "Muebles y descanso",
     "url": "https://www.falabella.com.co/falabella-co/category/cat8440974/Libros-Infantiles"
-  },
-  {
-    "id": "regalo-prueba",
-    "name": "Regalo de prueba",
-    "description": "Regalo ficticio para probar la reserva. Eliminar antes de publicar.",
-    "image": "/gifts/ropita.svg",
-    "category": "Salud y cuidado"
   }
 ]

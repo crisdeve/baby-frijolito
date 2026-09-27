@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import type { GiftWithStock } from "@/lib/types";
 
 export default function GiftCard({
@@ -33,7 +34,7 @@ export default function GiftCard({
         >
           <div className="relative h-16 w-16">
             <Image
-              src={gift.image}
+              src={assetPath(gift.image)}
               alt={gift.name}
               fill
               sizes="64px"
@@ -67,7 +68,7 @@ export default function GiftCard({
         <div className="flex flex-col items-center gap-2">
           <div className="relative h-16 w-16">
             <Image
-              src={gift.image}
+              src={assetPath(gift.image)}
               alt={gift.name}
               fill
               sizes="64px"
