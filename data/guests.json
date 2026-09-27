@@ -1,5 +1,20 @@
 [
   {
+    "id": "familia-marin",
+    "name": "Familia Marin",
+    "maxGuests": 4
+  },
+  {
+    "id": "dany-y-familia",
+    "name": "Dany y familia",
+    "maxGuests": 2
+  },
+  {
+    "id": "jose-david-y-laura",
+    "name": "Jose David & Laura",
+    "maxGuests": 2
+  },
+  {
     "id": "jose-luis-y-astrid",
     "name": "Jose Luis & Astrid",
     "maxGuests": 2
@@ -36,7 +51,7 @@
   },
   {
     "id": "jonnathan",
-    "name": "Jonnathan",
+    "name": "Jonnathan & Dennise",
     "maxGuests": 1
   },
   {
@@ -66,8 +81,8 @@
   },
   {
     "id": "jonnathan-2",
-    "name": "Jonnathan",
-    "maxGuests": 1
+    "name": "Jonnathan & Dennise",
+    "maxGuests": 2
   },
   {
     "id": "miller-y-familia",
@@ -81,7 +96,7 @@
   },
   {
     "id": "jaima-y-giss",
-    "name": "Jaima & Giss",
+    "name": "Jaime & Giss",
     "maxGuests": 2
   },
   {
@@ -115,13 +130,8 @@
     "maxGuests": 3
   },
   {
-    "id": "familia-marin",
-    "name": "Familia Marin",
-    "maxGuests": 4
-  },
-  {
-    "id": "dany-y-familia",
-    "name": "Dany y familia",
-    "maxGuests": 2
+    "id": "gustavo-y-fabian-pulido",
+    "name": "Gustavo y Fabian Pulido",
+    "maxGuests": 3
   }
 ]
