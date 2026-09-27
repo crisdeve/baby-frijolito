@@ -133,5 +133,10 @@
     "id": "gustavo-y-fabian-pulido",
     "name": "Gustavo y Fabian Pulido",
     "maxGuests": 3
+  },
+  {
+    "id": "velasco-familia",
+    "name": "Linda & Yair",
+    "maxGuests": 3
   }
 ]
