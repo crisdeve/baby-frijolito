@@ -12,6 +12,7 @@ import RsvpStep from "@/components/RsvpStep";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import DoneStep from "@/components/DoneStep";
 import MusicToggle from "@/components/MusicToggle";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 type Step = "invitacion" | "confirmado";
 
@@ -125,6 +126,7 @@ export default function InvitationFlow({ guest }: { guest: Guest }) {
         />
       </button>
       <MusicToggle />
+      <WhatsAppButton />
       <EventDetails
         onConfirmClick={step === "invitacion" ? scrollToDetails : undefined}
       />

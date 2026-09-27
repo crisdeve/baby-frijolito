@@ -138,5 +138,15 @@
     "id": "velasco-familia",
     "name": "Linda & Yair",
     "maxGuests": 3
+  },
+  {
+    "id": "ange-y-sebas-cute",
+    "name": "Ange & Sebas Cute",
+    "maxGuests": 2
+  },
+  {
+    "id": "dani-paz",
+    "name": "Dani Paz",
+    "maxGuests": 1
   }
 ]

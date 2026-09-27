@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { assetPath } from "@/lib/asset-path";
 import { babyShowerEvent } from "@/lib/event";
+import { shippingInfo } from "@/lib/shipping";
 
-type Detail = "fecha" | "lugar" | "direccion";
+type Detail = "fecha" | "lugar" | "direccion" | "envios";
 
 const BUTTONS: { id: Detail; icon: string; label: string }[] = [
   { id: "fecha", icon: "/icons/calendario.svg", label: "Fecha y hora" },
   { id: "lugar", icon: "/icons/ubicacion.svg", label: "Lugar" },
   { id: "direccion", icon: "/icons/mapa.svg", label: "Dirección" },
+  { id: "envios", icon: "/icons/envios.svg", label: "Envíos" },
 ];
 
 export default function EventDetails({
@@ -33,7 +35,7 @@ export default function EventDetails({
     <>
       <nav
         aria-label="Detalles del evento"
-        className="fixed inset-x-0 bottom-4 z-40 mx-auto flex w-fit gap-2 rounded-full border-2 border-brand-light/60 bg-surface p-2 shadow-xl"
+        className="fixed items-center inset-x-0 bottom-4 z-40 mx-auto flex w-fit rounded-full border-2 border-brand-light/60 bg-surface shadow-xl"
       >
         {BUTTONS.map((button) => (
           <button
@@ -42,7 +44,7 @@ export default function EventDetails({
             onClick={() => setOpen(button.id)}
             aria-label={button.label}
             aria-haspopup="dialog"
-            className="flex flex-col items-center gap-0.5 rounded-full px-3 py-1 transition-colors hover:bg-brand-light/20"
+            className="flex flex-col items-center gap-0.5 rounded-full px-2 py-1 transition-colors hover:bg-brand-light/20"
           >
             <Image
               src={assetPath(button.icon)}
@@ -133,21 +135,165 @@ function DetailContent({ detail }: { detail: Detail }) {
     );
   }
 
+  if (detail === "direccion") {
+    return (
+      <>
+        <Image src={assetPath("/icons/mapa.svg")} alt="" width={200} height={200} className="h-16 w-16" />
+        <h2 id="event-detail-title" className="font-script text-3xl text-brand-dark">
+          Dirección
+        </h2>
+        <p className="flex items-center gap-2 text-foreground/80">
+          {babyShowerEvent.address}
+          <CopyButton text={babyShowerEvent.address} />
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <a
+            href={babyShowerEvent.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-brand px-6 py-2 font-display text-base font-semibold text-white shadow-md transition-colors hover:bg-brand-dark"
+          >
+            Ver en el mapa
+          </a>
+          <a
+            href={babyShowerEvent.wazeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border-2 border-brand-light/60 px-6 py-2 font-display text-base font-semibold text-brand-dark transition-colors hover:bg-brand-light/20"
+          >
+            Abrir en Waze
+          </a>
+        </div>
+      </>
+    );
+  }
+
+  const addressLines = [
+    shippingInfo.address,
+    shippingInfo.address2,
+    shippingInfo.city,
+  ].filter(Boolean) as string[];
+
   return (
     <>
-      <Image src={assetPath("/icons/mapa.svg")} alt="" width={200} height={200} className="h-16 w-16" />
+      <Image src={assetPath("/icons/envios.svg")} alt="" width={200} height={200} className="h-16 w-16" />
       <h2 id="event-detail-title" className="font-script text-3xl text-brand-dark">
-        Dirección
+        Envío de regalos
       </h2>
-      <p className="text-foreground/80">{babyShowerEvent.address}</p>
+      <p className="text-foreground/80">{shippingInfo.instructions}</p>
+      <div className="w-full divide-y divide-brand-light/40 rounded-2xl bg-brand-light/20 px-4 text-left text-sm text-foreground/80">
+        <ShippingRow label="Destinatario" copyText={shippingInfo.recipientName}>
+          {shippingInfo.recipientName}
+        </ShippingRow>
+        <ShippingRow label="Dirección" copyText={addressLines.join("\n")}>
+          {addressLines.map((line, i) => (
+            <span key={i} className="block">
+              {line}
+            </span>
+          ))}
+        </ShippingRow>
+        <ShippingRow label="Teléfono" copyText={shippingInfo.phone}>
+          {shippingInfo.phone}
+        </ShippingRow>
+      </div>
+      {shippingInfo.notes && (
+        <p className="text-xs text-foreground/60">{shippingInfo.notes}</p>
+      )}
       <a
-        href={babyShowerEvent.mapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`tel:${shippingInfo.phone.replace(/\s+/g, "")}`}
         className="rounded-full bg-brand px-6 py-2 font-display text-base font-semibold text-white shadow-md transition-colors hover:bg-brand-dark"
       >
-        Ver ubicación en el mapa
+        Llamar
       </a>
     </>
+  );
+}
+
+function ShippingRow({
+  label,
+  copyText,
+  children,
+}: {
+  label: string;
+  copyText: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-start justify-between gap-3 py-3 first:pt-4 last:pb-4">
+      <p>
+        <span className="font-semibold text-brand-dark">{label}: </span>
+        {children}
+      </p>
+      <CopyButton text={copyText} />
+    </div>
+  );
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // Clipboard API can be missing (insecure context, old browser) —
+      // fail silently, the text is still visible to copy by hand.
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label={copied ? "Copiado" : "Copiar"}
+      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-brand-dark transition-colors hover:bg-brand-light/40"
+    >
+      {copied ? (
+        <CheckIcon className="h-4 w-4" />
+      ) : (
+        <CopyIcon className="h-4 w-4" />
+      )}
+    </button>
+  );
+}
+
+function CopyIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect
+        x="8"
+        y="8"
+        width="12"
+        height="12"
+        rx="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M5 15V6a2 2 0 0 1 2-2h9"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        d="m5 13 4 4 10-10"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
