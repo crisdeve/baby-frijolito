@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
     // No image optimization server is available on static hosting.
     unoptimized: true,
   },
+  // Lets `next dev` accept HMR/websocket requests tunneled through ngrok
+  // (its subdomain changes on every restart on the free plan).
+  allowedDevOrigins: ["*.ngrok-free.app"],
 };
 
 export default nextConfig;

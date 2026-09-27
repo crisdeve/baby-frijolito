@@ -18,7 +18,9 @@ export default function ConfirmDialog({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
       <div className="flex max-h-[90vh] w-full max-w-md flex-col gap-4 overflow-y-auto rounded-3xl bg-surface p-6 text-center shadow-2xl">
-        <span className="text-4xl">⚠️</span>
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white">
+          <CheckIcon className="h-7 w-7" />
+        </span>
         <h2 className="font-script text-3xl text-brand-dark">
           ¿Confirmar tu asistencia?
         </h2>
@@ -72,5 +74,20 @@ export default function ConfirmDialog({
         </div>
       </div>
     </div>
+  );
+}
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        d="m5 13 4 4 10-10"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

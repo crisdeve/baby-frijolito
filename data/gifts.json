@@ -5,7 +5,7 @@
     "description": "Colchón para colecho con mosquitero incluido, para que duerma seguro junto a ustedes.",
     "image": "/gifts/cuna.svg",
     "category": "Muebles y descanso",
-    "url": "https://www.exito.com/cuna-colecho-para-bebe-con-mosquitero-mecedora-y-organizador-gris-claro-103715973-mp/p"
+    "url": "https://www.mercadolibre.com.co/cuna-multifuncional-3-en-1-ultra-segura-y-ajustable"
   },
   {
     "id": "banera-cambiador",
@@ -13,39 +13,23 @@
     "description": "Bañera con cambiador integrado para el baño y el cambio de pañal diario.",
     "image": "/gifts/banera.svg",
     "category": "Muebles y descanso",
-    "url": "https://www.exito.com/banera-cambiador-ebaby-morado-100123296-mp/p"
-  },
-  {
-    "id": "mecedora-bebe",
-    "name": "Mecedora bebé",
-    "description": "Mecedora para acunar y calmar a Frijolito.",
-    "image": "/gifts/mecedora.svg",
-    "category": "Muebles y descanso",
-    "url": "https://www.exito.com/silla-mecedora-para-bebe-de-0-a-5-anos-musical-vibracion-ref-68129-morado-buho-104173373-mp/p"
-  },
-  {
-    "id": "protector-colecho",
-    "name": "Protector de colecho",
-    "description": "Protector impermeable para mantener limpio y seco el colecho.",
-    "image": "/gifts/cuna.svg",
-    "category": "Muebles y descanso",
-    "url": "https://www.falabella.com.co/falabella-co/product/7623685/Protector-de-Colchon-Cuna/7623685"
+    "url": "https://www.mercadolibre.com.co/up/MCOU5142803755?pdp_filters=item_id:MCO4438244130&matt_tool=15401541#origin=share&sid=share&wid=MCO4438244130&action=copy"
   },
   {
     "id": "sabana-colecho",
-    "name": "Sábana para el colecho (x5)",
-    "description": "Set de 5 sábanas suaves para el colchón del colecho.",
+    "name": "Sábana para el colecho",
+    "description": "Sábana suave para el colchón del colecho.",
     "image": "/gifts/cuna.svg",
     "category": "Muebles y descanso",
-    "url": "https://www.exito.com/sabanas-para-cama-cuna-de-bebe-unisex-102115405-mp/p"
+    "url": "https://www.mercadolibre.com.co/sabana-ajustable-para-cuna-de-bebe-en-muselina-de-algodon-su/up/MCOU4006609617"
   },
   {
     "id": "sleeping",
-    "name": "Sleeping",
-    "description": "Saco de dormir para que descanse abrigado y seguro.",
+    "name": "Sacos para dormir",
+    "description": "Sacos de dormir para que descanse abrigado y seguro.",
     "image": "/gifts/sleeping.svg",
     "category": "Muebles y descanso",
-    "url": "https://www.exito.com/sleeping-ovejero-termico-pijama-saco-dormir-para-bebe-azul-103787965-mp/p"
+    "url": "https://www.amazon.com/Unnivoll-dormir-vestible-cremallera-peque%C3%B1o/dp/B0D7MC7X3L/"
   },
   {
     "id": "gimnasio-piso",
@@ -53,7 +37,7 @@
     "description": "Gimnasio de piso con juguetes colgantes para estimular a Frijolito.",
     "image": "/gifts/gimnasio.svg",
     "category": "Muebles y descanso",
-    "url": "https://www.exito.com/gimnasio-para-bebe-funny-mat-piano-little-me-bebesit-hd668212-3180739/p"
+    "url": "https://www.pepeganga.com/gimnasio-actividades-explore-unisex-005233-01-3d-ar/p?skuId=195418"
   },
   {
     "id": "fular",
@@ -61,7 +45,7 @@
     "description": "Fular portabebés para cargarlo cómodamente pegado a ustedes.",
     "image": "/gifts/fular.svg",
     "category": "Para salir",
-    "url": "https://www.falabella.com.co/falabella-co/product/4949510/Fular-Portabebes-Elastico-Ayu-Ref.-Negro/4949510"
+    "url": "https://www.pepeganga.com/fular-para-bebe-nubba-1000/p?skuId=317575"
   },
   {
     "id": "coche",
@@ -69,7 +53,7 @@
     "description": "Coche de paseo para las salidas con Frijolito.",
     "image": "/gifts/coche.svg",
     "category": "Para salir",
-    "url": "https://www.exito.com/coche-de-paseo-para-bebe-forro-de-lluvia-color-fucsia-104294266-mp/p"
+    "url": "https://www.pepeganga.com/coche-para-bebe-travel-system-compacto-micro-gris-bebesit-jctsx5gy/p?idsku=280528"
   },
   {
     "id": "cojin-amamantar",
@@ -77,19 +61,27 @@
     "description": "Cojín ergonómico para apoyar la lactancia con comodidad.",
     "image": "/gifts/cojin-amamantar.svg",
     "category": "Lactancia",
-    "url": "https://www.exito.com/almohada-cojin-materna-lactancia-multiusos-bebe-nino-103266375-mp/p"
+    "url": "https://www.pepeganga.com/almohadon-materno-sencillo-gris-blanco-puntos-Nubba-5137/p?skuId=268543"
+  },
+  {
+    "id": "teteros-avent",
+    "name": "Set de Teteros Avent",
+    "description": "Set de teteros Avent Natural Response en 4 oz y 9 oz para la alimentación de Frijolito.",
+    "image": "/gifts/tetero.svg",
+    "category": "Lactancia",
+    "url": "https://www.pepeganga.com/set-teteros-para-recien-nacidos-avent-scd838-11/p?skuId=296787"
   },
   {
     "id": "toalla-capucha",
-    "name": "Toalla con Capucha (x5)",
-    "description": "Set de 5 toallas con capucha, suaves para después del baño.",
+    "name": "Toalla con Capucha",
+    "description": "Toalla con capucha, suave para después del baño.",
     "image": "/gifts/toalla.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/toalla-con-capucha-para-bebes-o-ninos-103463596-mp/p"
+    "url": "https://www.mercadolibre.com.co/76x76cm-cotton-wrap-cloth-soft-absorbent-wearable-green-1sa700608-gn/p/MCO2059522062"
   },
   {
     "id": "panales-recien-nacido",
-    "name": "Pañales recién nacido x1",
+    "name": "Pañales recién nacido - Winny",
     "description": "Pañales para las primeras semanas de Frijolito.",
     "image": "/gifts/panales.svg",
     "category": "Higiene y básicos",
@@ -97,11 +89,11 @@
   },
   {
     "id": "panales-etapa-1",
-    "name": "Pañales etapa 1",
+    "name": "Pañales etapa 1 - Winny",
     "description": "Pañales talla 1 para los primeros meses.",
     "image": "/gifts/panales.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/panal-sec-etapa-1-winny-16-und-3082835/p"
+    "url": "https://www.farmatodo.com.co/producto/236550068-panales-winny-sensitive-etapa-1-x-50-und"
   },
   {
     "id": "panales-etapa-2",
@@ -109,7 +101,7 @@
     "description": "Pañales talla 2, marca Winny.",
     "image": "/gifts/panales.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.falabella.com.co/falabella-co/product/134256512/Oferta-Panal-Winny-Ultratrim-Sec-Etapa-2-X-50Und-+-Toallitas/134256513"
+    "url": "https://www.farmatodo.com.co/producto/280400542-panales-winny-senstive-toallitas-humedas-etapa-2-x-40-und"
   },
   {
     "id": "panales-etapa-3",
@@ -117,7 +109,7 @@
     "description": "Pañales talla 3, marca Winny.",
     "image": "/gifts/panales.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.falabella.com.co/falabella-co/product/119638987/Panal-winny-ultratrim-sec-etapa-3-x-30-und-gratis-toallitas/119638988"
+    "url": "https://www.farmatodo.com.co/producto/209700340-panal-winny-gold-etapa-3-g-paquete-x-60-und"
   },
   {
     "id": "panales-etapa-4",
@@ -125,15 +117,15 @@
     "description": "Pañales talla 4, marca Winny.",
     "image": "/gifts/panales.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/panal-winny-et4-ultratri-x-50-u-560837/p"
+    "url": "https://www.farmatodo.com.co/producto/209850137-panal-winny-gold-etapa-4-xg-paquete-x-50-und"
   },
   {
     "id": "panitos-humedos",
-    "name": "Pañitos Húmedos",
+    "name": "Pañitos Húmedos - Winny",
     "description": "Toallitas húmedas para la limpieza diaria.",
     "image": "/gifts/panitos.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/toallitas-humedas-para-bebe-waterwipes-60-und-3110917/p"
+    "url": "https://www.farmatodo.com.co/producto/1043575-toallitas-humedas-winny"
   },
   {
     "id": "crema-panalera",
@@ -141,7 +133,7 @@
     "description": "Crema para prevenir y tratar la irritación por el pañal.",
     "image": "/gifts/crema.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/crem-antip-unguent-almipro-sin-refer-505928/p"
+    "url": "https://www.farmatodo.com.co/producto/219350030-crema-antipanalitis-almipro-unguento-frasco-x-500-gr"
   },
   {
     "id": "crema-hidratante",
@@ -153,27 +145,35 @@
   },
   {
     "id": "kit-unas",
-    "name": "Kit de uñas",
-    "description": "Set de tijeras y limas especiales para el cuidado de sus uñitas.",
+    "name": "Kit de higiene con termómetro",
+    "description": "Set de tijeras, lima y termómetro para el cuidado y la salud de sus uñitas.",
     "image": "/gifts/unas-kit.svg",
     "category": "Higiene y básicos",
-    "url": "https://www.exito.com/kit-set-cirugia-cuidado-del-bebe-corta-unas-salud-6-piezas-azul-100620040-mp/p"
+    "url": "https://www.amazon.com/-/es/cuidado-nacidos-actualizado-guarder%C3%ADa-Producto/dp/B0DSMHK6TS/"
   },
   {
     "id": "muselinas",
-    "name": "Muselinas 100% Algodón",
-    "description": "Muselinas suaves de algodón, ideales para cargar, cubrir o limpiar.",
+    "name": "Muselinas 100% Algodón - Cobija",
+    "description": "Cobija de muselina 100% algodón, ideal para cargar o cubrir a Frijolito.",
     "image": "/gifts/ropita.svg",
     "category": "Ropita",
-    "url": "https://www.exito.com/cobertor-bebe-cobija-muselina-manta-de-algodon-x3und-nina-nino-104768082-mp/p"
+    "url": "https://www.mercadolibre.com.co/cobija-muselina-algodon-organico-para-bebe-animales-beige/p/MCO2076882361"
+  },
+  {
+    "id": "muselinas-babero",
+    "name": "Muselinas 100% Algodón - Babero",
+    "description": "Toallas faciales de muselina 100% algodón, ideales como babero o para limpieza.",
+    "image": "/gifts/ropita.svg",
+    "category": "Ropita",
+    "url": "https://www.mercadolibre.com.co/toallas-faciales-de-muselina-de-algodon-para-bebe/p/MCO2044881075"
   },
   {
     "id": "bodies-manga-larga",
-    "name": "Bodies Manga Larga 0-3 meses 100% Algodón",
+    "name": "Bodies 0-3 meses 100% Algodón",
     "description": "Bodies de manga larga en algodón 100%, para los primeros meses.",
     "image": "/gifts/ropita.svg",
     "category": "Ropita",
-    "url": "https://www.falabella.com.co/falabella-co/product/882459390/Pack-x3-Body-Blanco-Manga-Larga-para-Bebe-Unisex-Yamp/882494160"
+    "url": "https://articulo.mercadolibre.com.co/MCO-4047920292-bodys-bebe-unisex-manga-larga-_JM"
   },
   {
     "id": "gorros-algodon",
@@ -181,7 +181,7 @@
     "description": "Gorritos de algodón para mantener su cabecita abrigada.",
     "image": "/gifts/gorro.svg",
     "category": "Ropita",
-    "url": "https://www.falabella.com.co/falabella-co/product/883287403/Gorros-para-Bebe-nina-Pack-de-3-unidades-de-Algodon-Yamp/883287406"
+    "url": "https://www.amazon.com/Newcotte-prematuro-algod%C3%B3n-nacidos-sencillo/dp/B0DYDZY8GB/"
   },
   {
     "id": "calcetines-algodon",
@@ -189,7 +189,7 @@
     "description": "Calcetines suaves de algodón para sus piecitos.",
     "image": "/gifts/calcetin.svg",
     "category": "Ropita",
-    "url": "https://www.exito.com/medias-calcetines-set-x-3-pares-bebe-nina-talla-0-6-meses-algodon-antideslizantes-101204436-mp/p"
+    "url": "https://www.falabella.com.co/falabella-co/product/883619360/calcetin-bebe-pmediastac/883619372"
   },
   {
     "id": "ropa-3-6-meses",
@@ -197,15 +197,7 @@
     "description": "Conjunto de ropita unisex de algodón para 3 a 6 meses.",
     "image": "/gifts/ropita.svg",
     "category": "Ropita",
-    "url": "https://www.exito.com/conjunto-de-ropa-para-bebe-de-0-a-3-meses-101329070-mp/p"
-  },
-  {
-    "id": "termometro",
-    "name": "Termómetro",
-    "description": "Termómetro digital para revisar su temperatura con facilidad.",
-    "image": "/gifts/termometro.svg",
-    "category": "Salud y cuidado",
-    "url": "https://www.exito.com/termometro-infrarrojo-digital-para-bebe-fdaceinvima-100706686-mp/p"
+    "url": "https://www.mercadolibre.com.co/bodysuits-simple-joys-by-carters-unisex-de-3-a-6-meses-p/p/MCO2054417291"
   },
   {
     "id": "aspirador-nasal",
@@ -213,7 +205,7 @@
     "description": "Aspirador nasal eléctrico para despejar su naricita.",
     "image": "/gifts/aspirador-nasal.svg",
     "category": "Salud y cuidado",
-    "url": "https://www.exito.com/aspirador-nasal-electrico-para-bebes-recargable-y-suave-con-silicona-medica-104811259-mp/p"
+    "url": "https://www.mercadolibre.com.co/aspirador-nasal-electrico-babeefly-azul-con-6-boquillas-para-bebes-y-ninos/p/MCO51552457"
   },
   {
     "id": "esterilizador",
@@ -221,22 +213,21 @@
     "description": "Esterilizador para biberones y accesorios del bebé.",
     "image": "/gifts/esterilizador.svg",
     "category": "Salud y cuidado",
-    "url": "https://www.falabella.com.co/falabella-co/product/122226183/esterilizador-6-teteros-bebe-importado-electrico-biberones/122226185"
+    "url": "https://www.amazon.com/Momcozy-esterilizador-secadora-botellas-compactas/dp/B0FCF7TT5Z/"
   },
   {
-    "id": "jabon-esterilizador",
-    "name": "Jabón lavado cosas (esterilizador)",
-    "description": "Jabón especial para lavar biberones y accesorios antes de esterilizar.",
-    "image": "/gifts/esterilizador.svg",
-    "category": "Salud y cuidado",
-    "url": "https://www.exito.com/jabn-lquido-para-biberones-102822777/p"
+    "id": "libros-cuentos",
+    "name": "Libros/Cuentos para bebé",
+    "description": "Libros y cuentos infantiles para las primeras lecturas de Frijolito.",
+    "image": "/gifts/libro.svg",
+    "category": "Muebles y descanso",
+    "url": "https://www.falabella.com.co/falabella-co/category/cat8440974/Libros-Infantiles"
   },
   {
-    "id": "botiquin",
-    "name": "Botiquín (copitos, gasas, algodón)",
-    "description": "Botiquín básico con copitos, gasas y algodón para el cuidado diario.",
-    "image": "/gifts/botiquin.svg",
-    "category": "Salud y cuidado",
-    "url": "https://www.exito.com/botiquin-primeros-auxilios-tipo-b-103690780-mp/p"
+    "id": "regalo-prueba",
+    "name": "Regalo de prueba",
+    "description": "Regalo ficticio para probar la reserva. Eliminar antes de publicar.",
+    "image": "/gifts/ropita.svg",
+    "category": "Salud y cuidado"
   }
 ]

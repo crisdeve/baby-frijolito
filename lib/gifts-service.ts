@@ -56,10 +56,9 @@ export async function getGiftsWithStock(): Promise<GiftWithStock[]> {
 
 /**
  * Confirms attendance (`confirmaciones`, one per guest) and claims any
- * number of gifts with a quantity each (`regalos-confirmados`, one doc per
- * gift claimed), decrementing `gifts.stock` for each. Everything happens in
- * a single transaction: either the whole RSVP goes through, or none of it
- * does — no partially-claimed gifts, no double stock decrements.
+ * optional gifts with a quantity each (`regalos-confirmados`, one doc per
+ * gift), decrementing `gifts.stock` for each. Everything happens in a single
+ * transaction: either the whole RSVP goes through, or none of it does.
  */
 export async function confirmAttendance(
   guest: Guest,
@@ -80,42 +79,40 @@ export async function confirmAttendance(
         const giftSnaps = await Promise.all(
           giftRefs.map((ref) => transaction.get(ref))
         );
-
         const stocks = giftSnaps.map((snap) =>
-          snap.exists() ? snap.data().stock ?? 0 : 0
+          snap.exists() ? (snap.data().stock ?? 0) : 0
         );
 
-        for (let i = 0; i < selections.length; i++) {
-          if (stocks[i] < selections[i].quantity) {
-            throw new ConfirmationError("sin-stock", selections[i].id);
+        selections.forEach((selection, i) => {
+          if (stocks[i] < selection.quantity) {
+            throw new ConfirmationError("sin-stock", selection.id);
           }
-        }
+        });
+
+        const confirmedAt = new Date().toISOString();
 
         transaction.set(confirmationRef, {
           guestId: guest.id,
           name: guest.name,
           numGuests,
-          confirmedAt: new Date().toISOString(),
+          confirmedAt,
         });
 
         selections.forEach((selection, i) => {
           transaction.update(giftRefs[i], {
             stock: stocks[i] - selection.quantity,
           });
-
-          const claimRef = doc(
-            db,
-            CLAIMED_GIFTS_COLLECTION,
-            `${guest.id}_${selection.id}`
+          transaction.set(
+            doc(db, CLAIMED_GIFTS_COLLECTION, `${guest.id}_${selection.id}`),
+            {
+              guestId: guest.id,
+              name: guest.name,
+              giftId: selection.id,
+              giftName: selection.name,
+              quantity: selection.quantity,
+              confirmedAt,
+            }
           );
-          transaction.set(claimRef, {
-            guestId: guest.id,
-            name: guest.name,
-            giftId: selection.id,
-            giftName: selection.name,
-            quantity: selection.quantity,
-            confirmedAt: new Date().toISOString(),
-          });
         });
       }),
       "Tiempo de espera agotado al confirmar tu asistencia."
@@ -126,7 +123,7 @@ export async function confirmAttendance(
     if (error instanceof ConfirmationError) {
       return error.reason === "sin-stock"
         ? { ok: false, reason: "sin-stock", giftId: error.giftId! }
-        : { ok: false, reason: error.reason };
+        : { ok: false, reason: "ya-confirmado" };
     }
     console.error("Error al confirmar asistencia", error);
     return { ok: false, reason: "error" };
@@ -134,11 +131,10 @@ export async function confirmAttendance(
 }
 
 class ConfirmationError extends Error {
-  reason: "sin-stock" | "ya-confirmado";
-  giftId?: string;
-  constructor(reason: "sin-stock" | "ya-confirmado", giftId?: string) {
+  constructor(
+    readonly reason: "sin-stock" | "ya-confirmado",
+    readonly giftId?: string
+  ) {
     super(reason);
-    this.reason = reason;
-    this.giftId = giftId;
   }
 }

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Guest } from "@/lib/types";
 import { babyShowerEvent } from "@/lib/event";
 import BabyImage from "@/components/BabyImage";
@@ -10,29 +9,11 @@ export default function WelcomeStep({
   guest: Guest;
   onAccept: () => void;
 }) {
-  const [opened, setOpened] = useState(false);
-
-  if (!opened) {
-    return (
-      <div className="w-full flex flex-1 flex-col items-center justify-center gap-8 py-20">
-        <button
-          type="button"
-          onClick={() => setOpened(true)}
-          aria-label="Abrir la invitación"
-          className="font-script text-4xl text-brand-dark px-8"
-        >
-          Abrir invitación
-        </button>
-        <BabyImage className="w-full" priority />
-      </div>
-    );
-  }
-
   return (
     <div className="w-full">
-      <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-6 px-8 py-20 text-center">
+      <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-6 px-8 pt-20 text-center">
         <h1 className="font-script text-4xl text-brand-dark">
-          ya falta poco
+          Vamos a ser padres
         </h1>
         <p className="text-foreground/80">{babyShowerEvent.message}</p>
         <div className="rounded-2xl bg-brand-light/20 px-5 py-4">
@@ -50,10 +31,10 @@ export default function WelcomeStep({
           onClick={onAccept}
           className="rounded-full bg-brand px-6 py-3 font-display text-lg font-semibold text-white shadow-md transition-colors hover:bg-brand-dark"
         >
-          Acceder a la invitación
+          Confirma tu asistencia
         </button>
       </div>
-      <BabyImage className="w-full" />
+      <BabyImage className="w-full" priority />
     </div>
   );
 }
