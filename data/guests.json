@@ -148,5 +148,80 @@
     "id": "dani-paz",
     "name": "Dani Paz",
     "maxGuests": 1
+  },
+  {
+    "id": "abuela-cecilia-y-dikson",
+    "name": "Abuela cecilia & Dikson",
+    "maxGuests": 2
+  },
+  {
+    "id": "mariana-y-sebas",
+    "name": "Mariana & Sebas",
+    "maxGuests": 2
+  },
+  {
+    "id": "nona-pola-y-juan",
+    "name": "Nona pola & Juan",
+    "maxGuests": 2
+  },
+  {
+    "id": "tio-gerardo-y-mary",
+    "name": "Tio gerardo & Mary",
+    "maxGuests": 2
+  },
+  {
+    "id": "tia-angela-y-jairo",
+    "name": "Tia Angela & Jairo",
+    "maxGuests": 2
+  },
+  {
+    "id": "nono-rafa",
+    "name": "Nono Rafa",
+    "maxGuests": 1
+  },
+  {
+    "id": "sergio-y-familia",
+    "name": "Sergio & Familia",
+    "maxGuests": 4
+  },
+  {
+    "id": "andrea-y-familia",
+    "name": "Andrea & Familia",
+    "maxGuests": 3
+  },
+  {
+    "id": "migue-y-pao",
+    "name": "Migue & Pao",
+    "maxGuests": 2
+  },
+  {
+    "id": "edinson-y-familia",
+    "name": "Edinson & familia",
+    "maxGuests": 2
+  },
+  {
+    "id": "juan-y-maria",
+    "name": "Juan & Maria",
+    "maxGuests": 2
+  },
+  {
+    "id": "hery-y-familia",
+    "name": "Hery & familia",
+    "maxGuests": 3
+  },
+  {
+    "id": "nona-ana",
+    "name": "Nona Ana",
+    "maxGuests": 1
+  },
+  {
+    "id": "tia-sergio-y-karime",
+    "name": "Tia Sergio & Karime",
+    "maxGuests": 2
+  },
+  {
+    "id": "emmanuel",
+    "name": "Emmanuel",
+    "maxGuests": 1
   }
 ]
