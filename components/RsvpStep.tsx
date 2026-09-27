@@ -86,7 +86,7 @@ export default function RsvpStep({
 
       <div className="mx-auto flex w-full max-w-lg flex-col gap-4 rounded-3xl bg-surface p-6 shadow-xl">
         <h2 className="font-script text-3xl text-brand-dark">
-          Lista de regalos (unisex)
+          Lista de regalos
         </h2>
         <p className="mb-2 text-sm font-semibold text-brand-dark">
           No sabemos si es niña / niño 🫢. Elige los regalos que quieres llevarle unisex
