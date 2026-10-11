@@ -2,6 +2,19 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Dashboard (/dashboard) access: a signed-in user whose email has a doc
+    // in `admins` (doc id == email, created by hand in the Firebase Console).
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    // Admin allowlist. Never readable or writable from the client.
+    match /admins/{email} {
+      allow read, write: if false;
+    }
+
     // Gift catalog stock. Public read so the invite can show availability.
     // Writes are restricted to a strictly-decreasing, non-negative integer
     // so a compromised client can't restock, delete, or overwrite anything
@@ -19,11 +32,12 @@ service cloud.firestore {
     // (read a single known id) stays open because confirmAttendance()
     // checks for an existing confirmation before creating one, inside the
     // same transaction that claims gifts and decrements their stock. `list`
-    // stays closed so the full collection can't be enumerated/read in bulk.
+    // is admin-only so the full collection can't be enumerated by guests.
     // Never updatable or deletable from the client — only written once.
     match /confirmaciones/{guestId} {
       allow get: if true;
-      allow list, update, delete: if false;
+      allow list: if isAdmin();
+      allow update, delete: if false;
       allow create: if request.resource.data.guestId == guestId
         && request.resource.data.name is string
         && request.resource.data.numGuests is int
@@ -33,9 +47,10 @@ service cloud.firestore {
 
     // One doc per (guest, gift) claim, doc id == `${guestId}_${giftId}` so
     // it can't be spoofed to a different id than its own data. The client
-    // never needs to read these back, so read access stays fully closed.
+    // never needs to read these back, so only admins can read them.
     match /regalos-confirmados/{claimId} {
-      allow read, update, delete: if false;
+      allow read: if isAdmin();
+      allow update, delete: if false;
       allow create: if claimId == request.resource.data.guestId + '_' + request.resource.data.giftId
         && request.resource.data.guestId is string
         && request.resource.data.name is string

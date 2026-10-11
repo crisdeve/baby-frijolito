@@ -43,6 +43,20 @@ regalos cuya disponibilidad vive en Firestore.
    GOOGLE_APPLICATION_CREDENTIALS=./service-account.json pnpm seed:gifts
    ```
 
+## Dashboard (`/dashboard`)
+
+Muestra personas e invitaciones confirmadas, invitados que faltan por
+confirmar, regalos faltantes y quién escogió cada regalo. Solo lo pueden ver
+cuentas de Google autorizadas:
+
+1. En Firebase Console > **Authentication** > Sign-in method, habilita
+   **Google**, y en Settings > Authorized domains agrega `crisdeve.github.io`.
+2. En Firestore, crea la colección **`admins`** con un documento por cada
+   persona autorizada cuyo **ID sea su email** (p. ej. `alguien@gmail.com`,
+   sin campos).
+3. Despliega las reglas actualizadas:
+   `firebase deploy --only firestore:rules --project <tu-project-id>`.
+
 ## Desarrollo local
 
 ```bash

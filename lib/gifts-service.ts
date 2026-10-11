@@ -18,7 +18,7 @@ const catalog = giftsCatalog as Omit<GiftWithStock, "stock">[];
 // Firestore's SDK can retry silently for a long time against an
 // unreachable/misconfigured project instead of rejecting, which would
 // otherwise leave the UI stuck on a loading state forever.
-function withTimeout<T>(promise: Promise<T>, message: string): Promise<T> {
+export function withTimeout<T>(promise: Promise<T>, message: string): Promise<T> {
   // The Firestore call itself isn't cancelable — if it loses the race and
   // rejects later on its own, catch it here so it doesn't surface as an
   // unhandled rejection.
