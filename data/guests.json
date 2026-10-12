@@ -228,5 +228,15 @@
     "id": "amparo-alirio",
     "name": "Alirio & Amparo",
     "maxGuests": 2
+  },
+  {
+    "id": "lamus",
+    "name": "Javi Lamus",
+    "maxGuests": 1
+  },
+  {
+    "id": "david",
+    "name": "David Castellanos",
+    "maxGuests": 1
   }
 ]
